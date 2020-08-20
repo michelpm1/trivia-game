@@ -1,5 +1,6 @@
 export interface ProgressState {
     status: QuestionsState,
+    loading: boolean
 }
 
 export interface Question {
@@ -15,5 +16,5 @@ export interface QuestionsState {
     questions: Question[],
     correctQuestions: number,
     incorrectQuestions: number,
-    progress: string,
+    progress: string
 }
