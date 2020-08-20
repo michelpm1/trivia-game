@@ -6,7 +6,7 @@ import {
 const API_URL = 'https://opentdb.com/api.php';
 
 
-const getTriviaQuestions = async (amount: string, difficulty: string, type: string) => {
+export const getTriviaQuestions = async (amount: number, difficulty: string, type: string) => {
 
     try {
         const response = await axios.get(`${API_URL}?amount=${amount}&difficulty=${difficulty}&type=${type}`);
