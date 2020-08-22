@@ -12,8 +12,8 @@ const Router = () => {
         // case 'finished':
         //     return <EndPage />
 
-        // case 'started':
-        //     return <QuestionPage />
+        case 'started':
+            return <div>test</div>
 
         default:
             return <IntroPage />

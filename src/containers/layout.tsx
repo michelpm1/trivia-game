@@ -8,8 +8,11 @@ interface LayoutProps {
 }
 
 const Layout = (props: LayoutProps) => {
-    const isLoading = useSelector((state: ProgressState) => state.loading)
+    const isLoading = useSelector((state: ProgressState) => {
+        return state.load.loading;
+    }
 
+    )
     return <div>
         {isLoading && <DefaultLoading />}
         {props.children}

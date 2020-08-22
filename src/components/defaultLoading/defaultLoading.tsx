@@ -1,8 +1,11 @@
-import React from 'react';
-import ReactLoading from 'react-loading';
+import React from 'react'
+import ReactLoading from 'react-loading'
+import styles from './defaultLoading.module.css'
 
 const DefaultLoading = () => (
-    <ReactLoading height={667} width={375} />
+    <div className={styles.defaultLoading}>
+        <ReactLoading type={'spokes'} color={'black'} height={200} width={100} />
+    </div>
 );
 
 export default DefaultLoading;

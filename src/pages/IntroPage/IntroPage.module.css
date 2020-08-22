@@ -1,0 +1,15 @@
+.title {
+    composes: centerBox from '../../base-styles.css'
+}
+
+.firstText {
+    composes: centerBox from '../../base-styles.css'
+}
+
+.secondText {
+    composes: centerBox from '../../base-styles.css'
+}
+
+.buttonBox {
+    composes: centerBox from '../../base-styles.css'
+}
