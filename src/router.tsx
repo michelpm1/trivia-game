@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useSelector } from 'react-redux'
 import { ProgressState } from './redux/types'
-import { IntroPage } from './pages/IntroPage/IntroPage'
+import IntroPage from './pages/IntroPage/IntroPage'
 const Router = () => {
     const actualState = useSelector((state: ProgressState) => {
         const { status } = state;
