@@ -1,15 +1,24 @@
 .title {
-    composes: centerBox from '../../base-styles.css'
+    composes: centerBox from '../../base-styles.css';
+    text-shadow: 2px 2px var(--color-antique-white);
+    font-size: 3rem;
+    padding-bottom: 2rem;
 }
 
-.firstText {
-    composes: centerBox from '../../base-styles.css'
+.defaultText {
+    text-shadow: 2px 2px var(--color-antique-white);
+    font-size: 2rem;
+    composes: centerBox from '../../base-styles.css';
 }
 
-.secondText {
-    composes: centerBox from '../../base-styles.css'
+.defaultText:first-child {
+    margin-top: 2rem;
 }
 
 .buttonBox {
-    composes: centerBox from '../../base-styles.css'
+    composes: centerBox from '../../base-styles.css';
+}
+
+.introButton {
+    composes: defaultBtn from '../../base-styles.css';
 }
