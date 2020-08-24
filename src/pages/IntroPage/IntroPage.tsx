@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useDispatch } from 'react-redux'
 import { startApp } from '../../redux/actions'
-import Layout from '../../containers/layout'
+import Layout from '../../containers/Layout'
 import styles from './IntroPage.module.css'
 const IntroPage = () => {
     const dispatch = useDispatch();

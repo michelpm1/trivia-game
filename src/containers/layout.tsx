@@ -1,8 +1,8 @@
 import * as React from 'react';
-import DefaultLoading from '../components/defaultLoading/defaultLoading';
+import DefaultLoading from '../components/DefaultLoading/DefaultLoading';
 import { useSelector } from 'react-redux';
 import { ProgressState } from '../redux/types';
-import styles from './layout.module.css';
+import styles from './Layout.module.css';
 interface LayoutProps {
     children: any
 }

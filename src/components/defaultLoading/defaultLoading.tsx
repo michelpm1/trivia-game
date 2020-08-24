@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactLoading from 'react-loading'
-import styles from './defaultLoading.module.css'
+import styles from './DefaultLoading.module.css'
 
 const DefaultLoading = () => (
     <div className={styles.defaultLoading}>
