@@ -1,7 +1,9 @@
-import * as React from 'react'
-import { useSelector } from 'react-redux'
-import { ProgressState } from './redux/types'
-import IntroPage from './pages/IntroPage/IntroPage'
+import * as React from 'react';
+import { useSelector } from 'react-redux';
+import { ProgressState } from './redux/types';
+import IntroPage from './pages/IntroPage/IntroPage';
+import QuestionsPage from './pages/QuestionPage/QuestionPage';
+
 const Router = () => {
     const actualState = useSelector((state: ProgressState) => {
         const { status } = state;
@@ -13,7 +15,7 @@ const Router = () => {
         //     return <EndPage />
 
         case 'started':
-            return <div>test</div>
+            return <QuestionsPage />
 
         default:
             return <IntroPage />

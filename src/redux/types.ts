@@ -4,8 +4,15 @@ export const LOAD_ACTIVE = 'LOAD_ACTIVE'
 
 export const START_QUESTIONS = 'START_QUESTIONS'
 export const QUESTIONS_LOADED = 'QUESTIONS_LOADED'
+export const ANSWER_QUESTION = 'ANSWER_QUESTIONS'
+
 interface LoadActiveAction {
     type: typeof LOAD_ACTIVE
+}
+
+export interface Answer {
+    answer: boolean,
+    questionNumber: number
 }
 
 interface LoadCompleteAction {
@@ -29,7 +36,7 @@ interface QuestionsLoaded {
     payload: ApiResponse
 }
 
-export type QuestionActionTypes = StartQuestionsAction | QuestionsLoaded
+export type QuestionActionTypes = StartQuestionsAction | QuestionsLoaded | AnswerQuestionAction
 
 
 export type LoadActionTypes = LoadActiveAction | LoadCompleteAction;
@@ -37,6 +44,11 @@ export type LoadActionTypes = LoadActiveAction | LoadCompleteAction;
 export interface ProgressState {
     status: QuestionsState,
     load: LoadState
+}
+
+interface AnswerQuestionAction {
+    type: typeof ANSWER_QUESTION,
+    payload: Answer
 }
 
 export interface Question {
@@ -52,5 +64,6 @@ export interface QuestionsState {
     questions: Question[],
     correctQuestions: number,
     incorrectQuestions: number,
-    progress: string
+    progress: string,
+    currentQuestion: number
 }

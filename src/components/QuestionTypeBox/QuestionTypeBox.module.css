@@ -1,0 +1,10 @@
+.questionBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.questionBoxText {
+    composes: whiteBox from '../../base-styles.css';
+}
