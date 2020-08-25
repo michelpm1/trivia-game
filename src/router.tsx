@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { ProgressState } from './redux/types';
 import IntroPage from './pages/IntroPage/IntroPage';
 import QuestionsPage from './pages/QuestionPage/QuestionPage';
+import ResultPage from './pages/ResultPage/ResultPage';
 
 const Router = () => {
     const actualState = useSelector((state: ProgressState) => {
@@ -11,7 +12,7 @@ const Router = () => {
     });
     switch (actualState) {
         case 'finished':
-            return <div>test</div>;
+            return <ResultPage />;
 
         case 'started':
             return <QuestionsPage />

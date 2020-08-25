@@ -41,23 +41,14 @@ const questionsReducer = (
                 }
             } = action
 
-            debugger;
-            if (state.currentQuestion === 10) {
-                return {
-                    ...state,
-                    progress: 'finished'
-                }
-            }
 
-            const isCorrect = state.questions[questionNumber].correctAnswer === answer;
+            const isCorrect = state.questions[questionNumber - 1].correctAnswer === answer;
 
             const questions = [...state.questions];
-
-            questions[state.currentQuestion].answer = answer;
+            questions[state.currentQuestion - 1].answer = answer;
 
             let resultQuestions = {};
 
-            debugger;
             if (isCorrect) {
                 resultQuestions = {
                     correctQuestions: state.correctQuestions + 1,
@@ -68,12 +59,17 @@ const questionsReducer = (
                 }
             }
 
-            return {
+            return state.currentQuestion !== 10 ? {
                 ...state,
                 ...resultQuestions,
                 currentQuestion: state.currentQuestion + 1,
                 questions
-            }
+            } : {
+                    ...state,
+                    ...resultQuestions,
+                    questions,
+                    progress: 'finished'
+                }
         }
         default: {
             return state

@@ -1,0 +1,7 @@
+.correctAnswer {
+    color: var(--color-green);
+}
+
+.wrongAnswer {
+    color: var(--color-red);
+}
