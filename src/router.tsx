@@ -9,10 +9,9 @@ const Router = () => {
         const { status } = state;
         return status.progress
     });
-
     switch (actualState) {
-        // case 'finished':
-        //     return <EndPage />
+        case 'finished':
+            return <div>test</div>;
 
         case 'started':
             return <QuestionsPage />

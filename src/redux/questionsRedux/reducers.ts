@@ -41,11 +41,18 @@ const questionsReducer = (
                 }
             } = action
 
-            const isCorrect = state.questions[questionNumber].rightAnswer === answer
+            if (state.currentQuestion === 10) {
+                return {
+                    ...state,
+                    progress: 'finished'
+                }
+            }
 
-            const questions = [...state.questions]
+            const isCorrect = state.questions[questionNumber].rightAnswer === answer;
 
-            questions[state.currentQuestion].answer = answer
+            const questions = [...state.questions];
+
+            questions[state.currentQuestion].answer = answer;
 
             let answerStats = {};
 
