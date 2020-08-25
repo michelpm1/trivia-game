@@ -1,0 +1,10 @@
+.defaultBtn {
+    box-shadow: 0.2rem 0.3remv var(--color-antique-white);
+    background-color: black;
+    color: white;
+    padding: 0.5rem 2.5rem;
+    text-align: center;
+    border-radius: 0, 0, 0.3rem;
+    display: inline-block;
+    font-size: 1rem;
+}
