@@ -1,0 +1,3 @@
+.scoreText {
+    composes: coloredText from '../../base-styles.css';
+}

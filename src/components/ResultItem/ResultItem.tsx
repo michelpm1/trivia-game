@@ -5,12 +5,12 @@ const ResultItem = (props: Question) => {
     const isAnswerCorrect = props.correctAnswer === props.answer;
     debugger;
     return (
-        <li>
-            <span>
+        <li className={styles.listItem}>
+            <span className={styles.answerResult}>
                 <div className={isAnswerCorrect ? styles.correctAnswer : styles.wrongAnswer}>
                     {isAnswerCorrect ? '+' : '-'}</div>
             </span>
-            <div>
+            <div className={styles.questionText}>
                 <span>{props.question}</span>
             </div>
         </li>
