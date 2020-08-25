@@ -5,6 +5,8 @@ export const LOAD_ACTIVE = 'LOAD_ACTIVE'
 export const START_QUESTIONS = 'START_QUESTIONS'
 export const QUESTIONS_LOADED = 'QUESTIONS_LOADED'
 export const ANSWER_QUESTION = 'ANSWER_QUESTIONS'
+export const RESET_QUESTIONS = 'RESET_QUESTIONS'
+
 
 interface LoadActiveAction {
     type: typeof LOAD_ACTIVE
@@ -36,7 +38,7 @@ interface QuestionsLoaded {
     payload: ApiResponse
 }
 
-export type QuestionActionTypes = StartQuestionsAction | QuestionsLoaded | AnswerQuestionAction
+export type QuestionActionTypes = StartQuestionsAction | QuestionsLoaded | AnswerQuestionAction | ResetQuestionAction
 
 
 export type LoadActionTypes = LoadActiveAction | LoadCompleteAction;
@@ -49,6 +51,10 @@ export interface ProgressState {
 interface AnswerQuestionAction {
     type: typeof ANSWER_QUESTION,
     payload: Answer
+}
+
+interface ResetQuestionAction {
+    type: typeof RESET_QUESTIONS
 }
 
 export interface Question {

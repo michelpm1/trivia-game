@@ -4,6 +4,7 @@ import {
     START_QUESTIONS,
     QUESTIONS_LOADED,
     ANSWER_QUESTION,
+    RESET_QUESTIONS,
 } from '../types'
 
 const initialState: QuestionsState = {
@@ -24,6 +25,10 @@ const questionsReducer = (
                 ...state,
                 progress: 'started'
             }
+        }
+
+        case RESET_QUESTIONS: {
+            return initialState;
         }
 
         case QUESTIONS_LOADED: {
