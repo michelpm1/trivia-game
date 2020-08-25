@@ -1,14 +1,12 @@
 .title {
-    composes: centerBox from '../../base-styles.css';
-    text-shadow: 2px 2px var(--color-antique-white);
+    composes: coloredText from '../../base-styles.css';
     font-size: 3rem;
     padding-bottom: 2rem;
 }
 
 .defaultText {
-    text-shadow: 2px 2px var(--color-antique-white);
     font-size: 2rem;
-    composes: centerBox from '../../base-styles.css';
+    composes: coloredText from '../../base-styles.css';
 }
 
 .defaultText:first-child {
@@ -16,7 +14,7 @@
 }
 
 .buttonBox {
-    composes: centerBox from '../../base-styles.css';
+    composes: coloredText from '../../base-styles.css';
 }
 
 .introButton {

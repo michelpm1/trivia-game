@@ -1,0 +1,22 @@
+.questionPageTittle {
+    text-shadow: 2px 2px var(--color-antique-white);
+    font-size: 2rem;
+    composes: coloredText from '../../base-styles.css';
+}
+
+.texActuaLQuestion {
+    text-shadow: 2px 2px var(--color-antique-white);
+    font-size: 2rem;
+    composes: coloredText from '../../base-styles.css';
+}
+
+.buttonBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.buttonBox > button {
+    margin: 0.5rem;
+}
