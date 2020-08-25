@@ -17,7 +17,6 @@ stories.add('QuestionPage', () =>
                         category: 'Industry',
                         difficulty: 'easy',
                         correctAnswer: false,
-                        incorrectAnswers: [],
                         question: 'Test question',
                         type: 'boolean',
                     }

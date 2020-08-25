@@ -18,7 +18,6 @@ export const getTriviaQuestions = async (amount: number, difficulty: string, typ
                 difficulty,
                 question,
                 correct_answer,
-                incorrect_answers
             } = questionItem;
 
             return {
@@ -27,7 +26,6 @@ export const getTriviaQuestions = async (amount: number, difficulty: string, typ
                 difficulty,
                 question: parser(question),
                 correctAnswer: correct_answer === 'True',
-                incorrectAnswers: incorrect_answers
             }
         });
         return result;
