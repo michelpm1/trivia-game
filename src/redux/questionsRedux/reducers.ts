@@ -9,7 +9,8 @@ const initialState: QuestionsState = {
     questions: [],
     correctQuestions: 0,
     incorrectQuestions: 0,
-    progress: 'intro'
+    progress: 'intro',
+    currentQuestion: 0,
 }
 
 const questionsReducer = (
