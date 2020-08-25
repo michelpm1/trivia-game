@@ -26,8 +26,8 @@ export const getTriviaQuestions = async (amount: number, difficulty: string, typ
                 type,
                 difficulty,
                 question: parser(question),
-                correct_answer,
-                incorrect_answers
+                correctAnswer: correct_answer === 'True',
+                incorrectAnswers: incorrect_answers
             }
         });
         return result;

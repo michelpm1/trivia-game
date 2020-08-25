@@ -41,6 +41,7 @@ const questionsReducer = (
                 }
             } = action
 
+            debugger;
             if (state.currentQuestion === 10) {
                 return {
                     ...state,
@@ -48,27 +49,28 @@ const questionsReducer = (
                 }
             }
 
-            const isCorrect = state.questions[questionNumber].rightAnswer === answer;
+            const isCorrect = state.questions[questionNumber].correctAnswer === answer;
 
             const questions = [...state.questions];
 
             questions[state.currentQuestion].answer = answer;
 
-            let answerStats = {};
+            let resultQuestions = {};
 
+            debugger;
             if (isCorrect) {
-                answerStats = {
-                    correctAnswers: state.correctQuestions + 1,
+                resultQuestions = {
+                    correctQuestions: state.correctQuestions + 1,
                 }
             } else {
-                answerStats = {
-                    incorrectAnswers: state.incorrectQuestions + 1,
+                resultQuestions = {
+                    incorrectQuestions: state.incorrectQuestions + 1,
                 }
             }
 
             return {
                 ...state,
-                ...answerStats,
+                ...resultQuestions,
                 currentQuestion: state.currentQuestion + 1,
                 questions
             }

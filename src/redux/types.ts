@@ -56,7 +56,8 @@ export interface Question {
     type: string,
     difficulty: string,
     question: string,
-    rightAnswer: boolean,
+    correctAnswer: boolean,
+    incorrectAnswers: boolean[]
     answer?: boolean
 }
 
