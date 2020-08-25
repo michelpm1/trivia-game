@@ -1,0 +1,10 @@
+.listBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    composes: whiteBox from '../../base-styles.css';
+    list-style: none;
+}

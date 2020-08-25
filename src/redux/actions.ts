@@ -3,8 +3,8 @@ import { getTriviaQuestions } from '../api/opentdbApi';
 import { loadActive, loadComplete } from './loadRedux/actions';
 import { startQuestions, questionsLoaded } from './questionsRedux/actions';
 
-export { startQuestions, answerQuestion } from './questionsRedux/actions';
-
+export { startQuestions, answerQuestion, resetQuestions, questionsLoaded, } from './questionsRedux/actions';
+export { loadActive, loadComplete } from './loadRedux/actions';
 export const startApp = () => {
     return async (dispatch: Dispatch) => {
         dispatch(loadActive())

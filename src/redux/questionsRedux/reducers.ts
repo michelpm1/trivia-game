@@ -4,6 +4,7 @@ import {
     START_QUESTIONS,
     QUESTIONS_LOADED,
     ANSWER_QUESTION,
+    RESET_QUESTIONS,
 } from '../types'
 
 const initialState: QuestionsState = {
@@ -26,6 +27,10 @@ const questionsReducer = (
             }
         }
 
+        case RESET_QUESTIONS: {
+            return initialState;
+        }
+
         case QUESTIONS_LOADED: {
             return {
                 ...state,
@@ -41,30 +46,35 @@ const questionsReducer = (
                 }
             } = action
 
-            const isCorrect = state.questions[questionNumber].rightAnswer === answer
 
-            const questions = [...state.questions]
+            const isCorrect = state.questions[questionNumber - 1].correctAnswer === answer;
 
-            questions[state.currentQuestion].answer = answer
+            const questions = [...state.questions];
+            questions[state.currentQuestion - 1].answer = answer;
 
-            let answerStats = {};
+            let resultQuestions = {};
 
             if (isCorrect) {
-                answerStats = {
-                    correctAnswers: state.correctQuestions + 1,
+                resultQuestions = {
+                    correctQuestions: state.correctQuestions + 1,
                 }
             } else {
-                answerStats = {
-                    incorrectAnswers: state.incorrectQuestions + 1,
+                resultQuestions = {
+                    incorrectQuestions: state.incorrectQuestions + 1,
                 }
             }
 
-            return {
+            return state.currentQuestion !== 10 ? {
                 ...state,
-                ...answerStats,
+                ...resultQuestions,
                 currentQuestion: state.currentQuestion + 1,
                 questions
-            }
+            } : {
+                    ...state,
+                    ...resultQuestions,
+                    questions,
+                    progress: 'finished'
+                }
         }
         default: {
             return state
