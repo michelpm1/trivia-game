@@ -12,7 +12,7 @@ const Router = () => {
     });
     switch (actualState) {
         case 'finished':
-            return <ResultPage />;
+            return <ResultPage />
 
         case 'started':
             return <QuestionsPage />
