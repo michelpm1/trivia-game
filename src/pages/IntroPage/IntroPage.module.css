@@ -2,11 +2,15 @@
     composes: coloredText from '../../base-styles.css';
     font-size: 3rem;
     padding-bottom: 2rem;
+    text-align: center;
 }
 
 .defaultText {
     font-size: 2rem;
     composes: coloredText from '../../base-styles.css';
+    text-align: center;
+    max-width: 90%;
+
 }
 
 .defaultText:first-child {

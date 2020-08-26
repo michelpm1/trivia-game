@@ -3,7 +3,6 @@ import { Question } from '../../redux/types';
 import styles from './ResultItem.module.css';
 const ResultItem = (props: Question) => {
     const isAnswerCorrect = props.correctAnswer === props.answer;
-    debugger;
     return (
         <li className={styles.listItem}>
             <span className={styles.answerResult}>
