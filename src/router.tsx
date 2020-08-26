@@ -7,20 +7,20 @@ import ResultPage from './pages/ResultPage/ResultPage';
 import { STATUS_STARTED, STATUS_FINISHED } from './constants';
 
 const Router = () => {
-    const actualState = useSelector((state: ProgressState) => {
-        const { status } = state;
-        return status.progress;
-    });
-    switch (actualState) {
-        case STATUS_FINISHED:
-            return <ResultPage />
+  const actualState = useSelector((state: ProgressState) => {
+    const { status } = state;
+    return status.progress;
+  });
+  switch (actualState) {
+    case STATUS_FINISHED:
+      return <ResultPage />;
 
-        case STATUS_STARTED:
-            return <QuestionsPage />
+    case STATUS_STARTED:
+      return <QuestionsPage />;
 
-        default:
-            return <IntroPage />
-    }
-}
+    default:
+      return <IntroPage />;
+  }
+};
 
 export default Router;

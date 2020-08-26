@@ -1,26 +1,25 @@
 .title {
-    composes: coloredText from '../../base-styles.css';
-    font-size: 3rem;
-    padding-bottom: 2rem;
-    text-align: center;
+  composes: coloredText from '../../base-styles.css';
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  text-align: center;
 }
 
 .defaultText {
-    font-size: 2rem;
-    composes: coloredText from '../../base-styles.css';
-    text-align: center;
-    max-width: 90%;
-
+  font-size: 2rem;
+  composes: coloredText from '../../base-styles.css';
+  text-align: center;
+  max-width: 90%;
 }
 
 .defaultText:first-child {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .buttonBox {
-    composes: coloredText from '../../base-styles.css';
+  composes: coloredText from '../../base-styles.css';
 }
 
 .introButton {
-    composes: defaultBtn from '../../base-styles.css';
+  composes: defaultBtn from '../../base-styles.css';
 }
