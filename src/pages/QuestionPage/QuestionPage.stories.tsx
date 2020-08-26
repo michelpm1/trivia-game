@@ -7,21 +7,24 @@ import store from '../../redux/store';
 import QuestionPage from './QuestionPage';
 
 const stories = storiesOf('QuestionPage', module);
-stories.add('QuestionPage', () =>
-    <Provider store={store}>
-        <ReactReduxContext.Consumer>
-            {({ store }) => {
-                store.dispatch(loadComplete())
-                store.dispatch(questionsLoaded([
-                    {
-                        category: 'Industry',
-                        difficulty: 'easy',
-                        correctAnswer: false,
-                        question: 'Test question',
-                        type: 'boolean',
-                    }
-                ]))
-                return <QuestionPage />
-            }}
-        </ReactReduxContext.Consumer>
-    </Provider>)
+stories.add('QuestionPage', () => (
+  <Provider store={store}>
+    <ReactReduxContext.Consumer>
+      {() => {
+        store.dispatch(loadComplete());
+        store.dispatch(
+          questionsLoaded([
+            {
+              category: 'Industry',
+              difficulty: 'easy',
+              correctAnswer: false,
+              question: 'Test question',
+              type: 'boolean',
+            },
+          ])
+        );
+        return <QuestionPage />;
+      }}
+    </ReactReduxContext.Consumer>
+  </Provider>
+));

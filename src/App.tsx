@@ -4,9 +4,10 @@ import store from './redux/store';
 import Router from './router';
 import './App.css';
 
-const App = () =>
+const App = () => (
   <Provider store={store}>
     <Router />
   </Provider>
+);
 
 export default App;

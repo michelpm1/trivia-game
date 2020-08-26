@@ -1,24 +1,24 @@
 .correctAnswer {
-    color: var(--color-green);
+  color: var(--color-green);
 }
 
 .wrongAnswer {
-    color: var(--color-red);
+  color: var(--color-red);
 }
 
 .answerResult {
-    margin-right: 1rem;
-    float: left;
-    font-size: 1.5rem;
-    position: relative;
-    bottom: 0.3rem;
+  margin-right: 1rem;
+  float: left;
+  font-size: 1.5rem;
+  position: relative;
+  bottom: 0.3rem;
 }
 
 .questionText {
-    float: left;
+  float: left;
 }
 
 .listItem {
-    padding: 0.3rem;
-    display: flex;
+  padding: 0.3rem;
+  display: flex;
 }
