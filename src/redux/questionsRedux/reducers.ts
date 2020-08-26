@@ -6,12 +6,13 @@ import {
     ANSWER_QUESTION,
     RESET_QUESTIONS,
 } from '../types'
+import { STATUS_STARTED, STATUS_FINISHED, STATUS_INTRO } from '../../constants';
 
 const initialState: QuestionsState = {
     questions: [],
     correctQuestions: 0,
     incorrectQuestions: 0,
-    progress: 'intro',
+    progress: STATUS_INTRO,
     currentQuestion: 1,
 }
 
@@ -23,7 +24,7 @@ const questionsReducer = (
         case START_QUESTIONS: {
             return {
                 ...state,
-                progress: 'started'
+                progress: STATUS_STARTED
             }
         }
 
@@ -73,7 +74,7 @@ const questionsReducer = (
                     ...state,
                     ...resultQuestions,
                     questions,
-                    progress: 'finished'
+                    progress: STATUS_FINISHED
                 }
         }
         default: {

@@ -1,6 +1,7 @@
 import reducers from './reducers';
 import { answerQuestion } from './actions';
 import { QuestionsState, Question } from '../types';
+import { STATUS_STARTED, STATUS_FINISHED } from '../../constants';
 
 
 function* mockQuestion(): Iterator<Question> {
@@ -11,7 +12,7 @@ function* mockQuestion(): Iterator<Question> {
         yield (
             {
                 category: 'Test Question',
-                type: 'started',
+                type: 'test',
                 difficulty: 'easy',
                 question: `Question ${i}`,
                 correctAnswer: answer,
@@ -26,7 +27,7 @@ test('Should update question state for ANSWER_QUESTION dispatch', () => {
 
     const getTriviaQuestions = mockQuestion();
     const initialState: QuestionsState = {
-        progress: 'started',
+        progress: STATUS_STARTED,
         currentQuestion: 1,
         questions: [getTriviaQuestions.next().value],
         correctQuestions: 0,
@@ -41,7 +42,7 @@ test('Should update question state for ANSWER_QUESTION dispatch', () => {
     )
 
     expect(actual).toEqual({
-        progress: 'started',
+        progress: STATUS_STARTED,
         currentQuestion: 2,
         questions: [
             state.questions[0]
@@ -54,7 +55,7 @@ test('Should update question state for ANSWER_QUESTION dispatch', () => {
 test('Should change progress to finished when answer 10 questions', () => {
     const getTriviaQuestions = mockQuestion();
     const initialState: QuestionsState = {
-        progress: 'started',
+        progress: STATUS_STARTED,
         currentQuestion: 1,
         questions: [],
         correctQuestions: 0,
@@ -71,5 +72,5 @@ test('Should change progress to finished when answer 10 questions', () => {
             answerQuestion({ answer: true, questionNumber: i })
         )
     }
-    expect(actual.progress).toEqual('finished');
+    expect(actual.progress).toEqual(STATUS_FINISHED);
 });
