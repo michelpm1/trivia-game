@@ -10,6 +10,9 @@ import DefaultBtn from '../../components/DefaultBtn/DefaultBtn';
 const QuestionPage = () => {
   const dispatch = useDispatch();
 
+  /**
+   * Click handler to send the response for the question
+   */
   const handleResponse = (payload: Answer) => {
     dispatch(answerQuestion(payload));
   };

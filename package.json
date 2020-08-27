@@ -22,7 +22,6 @@
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "typescript": "^3.9.7",
     "@storybook/react": "^6.0.16"
   },
   "scripts": {
@@ -76,6 +75,8 @@
     "eslint-plugin-react-hooks": "^4.1.0",
     "prettier": "^2.1.1",
     "prettier-eslint": "^11.0.0",
-    "prettier-eslint-cli": "^5.0.0"
+    "prettier-eslint-cli": "^5.0.0",
+    "typedoc": "^0.18.0",
+    "typescript": "^3.9.7"
   }
 }

@@ -7,6 +7,11 @@ import {
 
 const initialState: LoadState = { loading: false };
 
+/**
+ * Currently the API just needs to indicate if it's loading or not
+ * @param state Current state
+ * @param action Dispatched action
+ */
 const loadReducer = (
   state = initialState,
   action: LoadActionTypes

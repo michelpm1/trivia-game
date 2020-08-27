@@ -1,8 +1,9 @@
 import { Dispatch } from 'redux';
-import { getTriviaQuestions } from '../api/opentdbApi';
+import getTriviaQuestions from '../api/opentdbApi';
 import { loadActive, loadComplete } from './loadRedux/actions';
 import { startQuestions, questionsLoaded } from './questionsRedux/actions';
 
+// Only expose actions that are needed by components
 export {
   startQuestions,
   answerQuestion,
@@ -10,6 +11,10 @@ export {
   questionsLoaded,
 } from './questionsRedux/actions';
 export { loadActive, loadComplete } from './loadRedux/actions';
+
+/**
+ * Simple thunk to fetch API results
+ */
 export const startApp = () => {
   return async (dispatch: Dispatch) => {
     dispatch(loadActive());

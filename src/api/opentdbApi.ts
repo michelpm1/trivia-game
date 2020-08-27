@@ -5,8 +5,10 @@ import { ApiGetQuestionsItem } from './types';
 
 const API_URL = 'https://opentdb.com/api.php';
 
-// eslint-disable-next-line import/prefer-default-export
-export const getTriviaQuestions = async (
+/**
+ * Endpoint to get questions from opentdbAPI
+ */
+const getTriviaQuestions = async (
   amount: number,
   difficulty: string,
   type: string
@@ -40,3 +42,6 @@ export const getTriviaQuestions = async (
     return error;
   }
 };
+
+
+export default getTriviaQuestions;
