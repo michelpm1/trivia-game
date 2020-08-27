@@ -16,6 +16,11 @@ const initialState: QuestionsState = {
   currentQuestion: 1,
 };
 
+/**
+ * Manage the question's state
+ * @param state Current game state
+ * @param action Dispatch action
+ */
 const questionsReducer = (
   state = initialState,
   action: QuestionActionTypes

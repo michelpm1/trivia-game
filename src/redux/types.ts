@@ -59,18 +59,51 @@ interface ResetQuestionAction {
 }
 
 export interface Question {
+  /**
+   * Category of the question
+   */
   category: string;
+  /**
+   * Type of the question
+   */
   type: string;
+  /**
+   * Level of difficulty of the question
+   */
   difficulty: string;
+  /**
+   * Text with the question
+   */
   question: string;
+  /**
+   * Response for the question
+   */
   correctAnswer: boolean;
+  /**
+   * Response for the answer
+   */
   answer?: boolean;
 }
 
 export interface QuestionsState {
+  /**
+   * List of questions
+   */
   questions: Question[];
+  /**
+   * Total correct questions
+   */
   correctQuestions: number;
+  /**
+   * Total incorrect questions
+   */
   incorrectQuestions: number;
+  /**
+   * Progress in the application (Started, Finished, Intro) necessary for the router to redirect
+   */
   progress: string;
+  /**
+   * Actual question user is answering
+   */
   currentQuestion: number;
 }

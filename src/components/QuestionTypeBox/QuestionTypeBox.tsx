@@ -2,7 +2,10 @@ import * as React from 'react';
 import styles from './QuestionTypeBox.module.css';
 
 interface QuestionProps {
-  children: any;
+  /**
+   * String with the question text
+   */
+  children: string;
 }
 
 const QuestionTypeBox = (props: QuestionProps) => {

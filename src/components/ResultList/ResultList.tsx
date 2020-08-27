@@ -5,6 +5,9 @@ import ResultItem from '../ResultItem/ResultItem';
 import styles from './ResultList.module.css';
 
 export interface ResultListProps {
+  /**
+   * List of questions wrapped by the ResultList component.
+   */
   entries: Question[];
 }
 
