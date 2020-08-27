@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+/**
+ * Inject root component into index 
+ */
 ReactDOM.render(
   <React.StrictMode>
     <App />

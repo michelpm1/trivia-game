@@ -1,20 +1,47 @@
-import { default as axios } from 'axios'
-import {
-    ApiGetQuestionsItem
-} from './types'
+/* eslint-disable no-shadow */
+import axios from 'axios';
+import parser from 'html-react-parser';
+import { ApiGetQuestionsItem } from './types';
 
 const API_URL = 'https://opentdb.com/api.php';
 
+/**
+ * Endpoint to get questions from opentdbAPI
+ */
+const getTriviaQuestions = async (
+  amount: number,
+  difficulty: string,
+  type: string
+) => {
+  try {
+    const response = await axios.get(
+      `${API_URL}?amount=${amount}&difficulty=${difficulty}&type=${type}`
+    );
+    const result = response.data.results.map(
+      (questionItem: ApiGetQuestionsItem) => {
+        const {
+          category,
+          type,
+          difficulty,
+          question,
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          correct_answer,
+        } = questionItem;
 
-export const getTriviaQuestions = async (amount: number, difficulty: string, type: string) => {
+        return {
+          category,
+          type,
+          difficulty,
+          question: parser(question),
+          correctAnswer: correct_answer === 'True',
+        };
+      }
+    );
+    return result;
+  } catch (error) {
+    return error;
+  }
+};
 
-    try {
-        const response = await axios.get(`${API_URL}?amount=${amount}&difficulty=${difficulty}&type=${type}`);
-        const result = response.data.results.map((questionItem: ApiGetQuestionsItem) => {
-            return questionItem;
-        });
-        return result;
-    } catch (error) {
-        return error;
-    }
-}
+
+export default getTriviaQuestions;
