@@ -22,7 +22,7 @@ Run any of these with `npm run <command>`
 |storybook|Launch Storybook|
 |test|Lint and run integration tests|
 |build|Build the app "Tests and linting must pass to succeed"|
-|build-docs|Generate Typedoc documentation|
+|gen-docs|Generate Typedoc documentation|
 |lint|Run lint checker|
 |eject|Create react app script to eject all build tools and configurations making them manual
 

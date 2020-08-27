@@ -28,10 +28,10 @@
     "start": "react-scripts start",
     "build": "npm run lint && CI=true react-scripts test --env=jsdom && react-scripts build",
     "test": "npm run lint && react-scripts test",
-    "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "gen-docs": "typedoc --out docs ./src",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
