@@ -20,7 +20,6 @@ const IntroPage = () => {
           handleFunction={() => dispatch(startApp())}
           buttonText="Begin"
         />
-        {/* <button className={styles.introButton} onClick={() => }>Begin</button> */}
       </div>
     </Layout>
   );
