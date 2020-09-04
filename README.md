@@ -1,5 +1,5 @@
 # Trivia Questions App
-A ten question trivia game.
+An example project with my last technologies and patterns for Frontend development.
 
 **Github:** https://github.com/michelpm1/trivia-game
 **Live App:** https://sad-almeida-2b9978.netlify.app
